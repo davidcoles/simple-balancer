@@ -17,6 +17,8 @@ There's also no statistics, little logging or any status indication,
 so take a look at the more full-featured balancer code in main VC5
 repository.
 
+If you're interested I can add more complete examples - let me know!
+
 ## Backend servers
 
 Set up two or more servers running a webserver on port 80. Add the VIP
@@ -83,7 +85,7 @@ You'll get a few minutes of load-balancing goodness before the
 automatic kill-switch stops handling code in the kernel, and then the
 balancer exits shortly afterwards.
 
-If you're feeling brave you remove the killswitch and put a `for`
+If you're feeling brave you can remove the killswitch and put a `for`
 around the sleep stetement, but make sure that all the parameters
-you've put in are correct; this operates at Layer 2 and there are
+you've put in are correct; this operates at layer 2 and there are
 opportunities to introduce loops if you're not careful.
