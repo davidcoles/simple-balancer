@@ -1,4 +1,4 @@
-module bar
+module balancer
 
 go 1.16
 
