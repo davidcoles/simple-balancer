@@ -11,7 +11,7 @@ vc5/kernel/bpf/bpf.o: vc5
 	cd vc5 && $(MAKE) kernel/bpf/bpf.o
 
 vc5:
-	git clone --branch v0.1.14 git@github.com:davidcoles/vc5.git
+	git clone --branch v0.1.14 https://github.com/davidcoles/vc5.git
 
 clean:
 	rm -f balancer
