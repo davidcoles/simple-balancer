@@ -38,7 +38,7 @@ func main() {
 
 	lb := vc5.LoadBalancer{
 		Native:     false,      // If your ethernet card has driver support for XDP this can be set to true (FAST!)
-		KillSwitch: 3,          // Stop all load-balancing activity after 3 minutes as a safety precaution
+		KillSwitch: 5,          // Stop all load-balancing activity after 3 minutes as a safety precaution
 		Interfaces: interfaces, // Load XDP/eBPF code to these interfaces
 	}
 
@@ -61,5 +61,5 @@ func main() {
 
 	pool.NLRI(map[string]bool{virtual: true}) // advertise the VIP
 
-	time.Sleep(5 * time.Minute) // Kick our heels for a while ...
+	time.Sleep(6 * time.Minute) // Kick our heels for a while ...
 }

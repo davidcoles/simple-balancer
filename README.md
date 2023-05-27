@@ -13,6 +13,10 @@ The balancer in this example does no health checking of the services
 on the backends. Make sure you have added the VIP to them or it won't
 work!
 
+There's also no statistics, little logging or any status indication,
+so take a look at the more full-featured balancer code in main VC5
+repository.
+
 ## Backend servers
 
 Set up two or more servers running a webserver on port 80. Add the VIP
@@ -74,3 +78,12 @@ Try sending a request to the VIP:
 If that succeeds then send it some more traffic with ApacheBench:
 
 `ab -n 100000 -c 100 http://192.168.100.1/`
+
+You'll get a few minutes of load-balancing goodness before the
+automatic kill-switch stops handling code in the kernel, and then the
+balancer exits shortly afterwards.
+
+If you're feeling brave you remove the killswitch and put a `for`
+around the sleep stetement, but make sure that all the parameters
+you've put in are correct; this operates at Layer 2 and there are
+opportunities to introduce loops if you're not careful.
