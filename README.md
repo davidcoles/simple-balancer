@@ -19,6 +19,10 @@ repository.
 
 If you're interested I can add more complete examples - let me know!
 
+All the server we're going to use here need to be on the same
+subnet/VLAN (unless you're using BGP to advertise the VIP to your
+router, in which case the client can be anywhere on your network).
+
 ## Backend servers
 
 Set up two or more servers running a webserver on port 80. Add the VIP
